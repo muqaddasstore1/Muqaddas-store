@@ -14,4 +14,104 @@
     .price { font-size: 18px; font-weight: bold; color: #d2691e; margin: 5px 0 10px 0; }
     .btn { background: #d2691e; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; width: 100%; margin-bottom: 8px; font-size: 14px; }
     .btn:hover { background: #b8561a; }
-    .cart { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    .cart { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .cart h2 { color: #d2691e; }
+    #cartItems div { padding: 8px 0; border-bottom: 1px solid #eee; }
+    #whatsappBtn { background: #25D366; margin-top: 15px; }
+    input, textarea { width: 100%; padding: 8px; margin: 5px 0 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+</style>
+</head>
+<body>
+
+<h1>🧀 Muqaddas Store</h1>
+
+<div class="products">
+  
+  <!-- PRODUCT 1: CHEDDAR CHEESE -->
+  <div class="product">
+    <img src="https://i.ibb.co/GQC1jR8R/cheese.jpg" alt="Nutritive Cheddar Cheese">
+    <h2 style="color:#d2691e; font-size:18px;">Nutritive Cheddar Cheese</h2>
+    
+    <h3>250g</h3>
+    <p class="price">Rs. 270</p>
+    <button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 250g', 270)">Add to Cart</button>
+
+    <h3>500g</h3>
+    <p class="price">Rs. 540</p>
+    <button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 500g', 540)">Add to Cart</button>
+
+    <h3>1kg</h3>
+    <p class="price">Rs. 1080</p>
+    <button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 1kg', 1080)">Add to Cart</button>
+
+    <h3>2kg</h3>
+    <p class="price">Rs. 2150</p>
+    <button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 2kg', 2150)">Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 2: SLICES -->
+  <div class="product">
+    <img src="https://i.ibb.co/G4q9VtDK/slices.jpg" alt="Nutritive Cheese Slices">
+    <h2 style="color:#d2691e; font-size:18px;">Nutritive Cheese Slices</h2>
+
+    <h3>1kg Pack</h3>
+    <p class="price">Rs. 1450</p>
+    <button class="btn" onclick="addToCart('Nutritive Cheese Slices - 1kg', 1450)">Add to Cart</button>
+
+    <h3>Each Slice</h3>
+    <p class="price">Rs. 32</p>
+    <button class="btn" onclick="addToCart('Nutritive Cheese Slices - Each', 32)">Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 3: MOZZARELLA CHEESE -->
+  <div class="product">
+    <img src="https://i.ibb.co/LXgJw77X/mozzarella.jpg" alt="Nutritive Mozzarella Cheese">
+    <h2 style="color:#d2691e; font-size:18px;">Nutritive Mozzarella Cheese</h2>
+
+    <h3>250g</h3>
+    <p class="price">Rs. 320</p>
+    <button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 250g', 320)">Add to Cart</button>
+
+    <h3>500g</h3>
+    <p class="price">Rs. 640</p>
+    <button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 500g', 640)">Add to Cart</button>
+
+    <h3>1kg</h3>
+    <p class="price">Rs. 1280</p>
+    <button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 1kg', 1280)">Add to Cart</button>
+
+    <h3>2kg</h3>
+    <p class="price">Rs. 2550</p>
+    <button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 2kg', 2550)">Add to Cart</button>
+  </div>
+
+</div>
+
+<div class="cart">
+  <h2>🛒 Your Cart</h2>
+  <div id="cartItems">Cart is empty</div>
+  <h3>Total: Rs. <span id="total">0</span></h3>
+  
+  <h3>Customer Details</h3>
+  <input type="text" id="name" placeholder="Your Name">
+  <input type="tel" id="phone" placeholder="Your Phone Number">
+  <textarea id="address" placeholder="Your Full Address"></textarea>
+  
+  <button class="btn" id="whatsappBtn" onclick="sendWhatsApp()">Send Order on WhatsApp</button>
+</div>
+
+<script>
+let cart = [];
+let total = 0;
+
+function addToCart(name, price) {
+    cart.push({name, price});
+    total += price;
+    updateCart();
+    alert(name + ' added to cart!');
+}
+
+function updateCart() {
+    let cartDiv = document.getElementById('cartItems');
+    if(cart.length === 0) {
+        cartDiv.innerHTML = 'Cart is empty';
