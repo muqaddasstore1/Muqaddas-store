@@ -7,12 +7,12 @@
 <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #fff8f0; }
     h1 { text-align: center; color: #d2691e; }
-    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px; }
     .product { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
     .product img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
-    .product h3 { color: #333; margin: 10px 0 5px 0; font-size: 16px; }
-    .price { font-size: 18px; font-weight: bold; color: #d2691e; margin: 5px 0; }
-    .btn { background: #d2691e; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 5px; font-size: 14px; }
+    .product h3 { color: #333; margin: 10px 0 5px 0; font-size: 15px; }
+    .price { font-size: 18px; font-weight: bold; color: #d2691e; margin: 5px 0 10px 0; }
+    .btn { background: #d2691e; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; width: 100%; margin-bottom: 8px; font-size: 14px; }
     .btn:hover { background: #b8561a; }
     .cart { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
     .cart h2 { color: #d2691e; }
@@ -26,85 +26,48 @@
 <h1>🧀 Muqaddas Store</h1>
 
 <div class="products">
+  
+  <!-- PRODUCT 1: CHEDDAR CHEESE -->
   <div class="product">
     <img src="https://i.ibb.co/GQC1jR8R/cheese.jpg" alt="Nutritive Cheddar Cheese">
-    <h3>Nutritive Cheddar Cheese - 250g</h3>
+    <h2 style="color:#d2691e; font-size:18px;">Nutritive Cheddar Cheese</h2>
+    
+    <h3>250g</h3>
     <p class="price">Rs. 270</p>
     <button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 250g', 270)">Add to Cart</button>
 
-    <h3>Nutritive Cheddar Cheese - 500g</h3>
+    <h3>500g</h3>
     <p class="price">Rs. 540</p>
     <button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 500g', 540)">Add to Cart</button>
 
-    <h3>Nutritive Cheddar Cheese - 1kg</h3>
+    <h3>1kg</h3>
     <p class="price">Rs. 1080</p>
     <button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 1kg', 1080)">Add to Cart</button>
 
-    <h3>Nutritive Cheddar Cheese - 2kg</h3>
+    <h3>2kg</h3>
     <p class="price">Rs. 2150</p>
     <button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 2kg', 2150)">Add to Cart</button>
   </div>
-</div>
 
-<div class="cart">
-  <h2>🛒 Your Cart</h2>
-  <div id="cartItems">Cart is empty</div>
-  <h3>Total: Rs. <span id="total">0</span></h3>
-  
-  <h3>Customer Details</h3>
-  <input type="text" id="name" placeholder="Your Name">
-  <input type="tel" id="phone" placeholder="Your Phone Number">
-  <textarea id="address" placeholder="Your Full Address"></textarea>
-  
-  <button class="btn" id="whatsappBtn" onclick="sendWhatsApp()">Send Order on WhatsApp</button>
-</div>
+  <!-- PRODUCT 2: SLICES -->
+  <div class="product">
+    <img src="https://i.ibb.co/GQC1jR8R/cheese.jpg" alt="Nutritive Cheese Slices">
+    <h2 style="color:#d2691e; font-size:18px;">Nutritive Cheese Slices</h2>
 
-<script>
-let cart = [];
-let total = 0;
+    <h3>200g</h3>
+    <p class="price">Rs. 350</p>
+    <button class="btn" onclick="addToCart('Nutritive Cheese Slices - 200g', 350)">Add to Cart</button>
 
-function addToCart(name, price) {
-    cart.push({name, price});
-    total += price;
-    updateCart();
-    alert(name + ' added to cart!');
-}
+    <h3>400g</h3>
+    <p class="price">Rs. 650</p>
+    <button class="btn" onclick="addToCart('Nutritive Cheese Slices - 400g', 650)">Add to Cart</button>
 
-function updateCart() {
-    let cartDiv = document.getElementById('cartItems');
-    if(cart.length === 0) {
-        cartDiv.innerHTML = 'Cart is empty';
-    } else {
-        cartDiv.innerHTML = '';
-        cart.forEach(item => {
-            cartDiv.innerHTML += `<div>${item.name} - Rs. ${item.price}</div>`;
-        });
-    }
-    document.getElementById('total').innerText = total;
-}
+    <h3>800g</h3>
+    <p class="price">Rs. 1200</p>
+    <button class="btn" onclick="addToCart('Nutritive Cheese Slices - 800g', 1200)">Add to Cart</button>
+  </div>
 
-function sendWhatsApp() {
-    let name = document.getElementById('name').value;
-    let phone = document.getElementById('phone').value;
-    let address = document.getElementById('address').value;
-    
-    if(cart.length === 0) { alert('Please add items to cart first!'); return; }
-    if(!name || !phone || !address) { alert('Please fill all details!'); return; }
-    
-    let message = `*New Order - Muqaddas Store*%0A%0A`;
-    message += `*Name:* ${name}%0A`;
-    message += `*Phone:* ${phone}%0A`;
-    message += `*Address:* ${address}%0A%0A`;
-    message += `*Order Details:*%0A`;
-    cart.forEach(item => {
-        message += `- ${item.name} : Rs. ${item.price}%0A`;
-    });
-    message += `%0A*Total: Rs. ${total}*`;
-    
-    let whatsappURL = `https://wa.me/923152030249?text=${message}`;
-    window.open(whatsappURL, '_blank');
-}
-</script>
-
-</body>
-</html>
+  <!-- PRODUCT 3: MOZZARELLA CHEESE -->
+  <div class="product">
+    <img src="https://i.ibb.co/LXgJw77X/mozzarella.jpg" alt="Nutritive Mozzarella Cheese">
+    <h2 style="color:#d2691e; font-size:18px;">Nutritive Mozzarella Cheese</h
