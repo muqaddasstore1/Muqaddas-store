@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muqaddas Store - Premium Cheese</title>
+<title>Muqaddas Store - Premium Cheese & Kitchen</title>
 <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #fff8f0; }
     h1 { text-align: center; color: #d2691e; }
-  .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px; }
-  .product { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
-  .product img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
-  .product h3 { color: #333; margin: 10px 0 5px 0; font-size: 15px; }
-  .price { font-size: 18px; font-weight: bold; color: #d2691e; margin: 5px 0 10px 0; }
-  .btn { background: #d2691e; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; width: 100%; margin-bottom: 8px; font-size: 14px; }
-  .btn:hover { background: #b8561a; }
-  .cart { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-  .cart h2 { color: #d2691e; }
+ .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px; }
+ .product { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+ .product img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+ .product h3 { color: #333; margin: 10px 0 5px 0; font-size: 15px; }
+ .price { font-size: 18px; font-weight: bold; color: #d2691e; margin: 5px 0 10px 0; }
+ .btn { background: #d2691e; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; width: 100%; margin-bottom: 8px; font-size: 14px; }
+ .btn:hover { background: #b8561a; }
+ .cart { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+ .cart h2 { color: #d2691e; }
     #cartItems div { padding: 8px 0; border-bottom: 1px solid #eee; }
     #whatsappBtn { background: #25D366; margin-top: 15px; }
     input, textarea, select { width: 100%; padding: 8px; margin: 5px 0 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
-  .total-box { background: #fff8f0; padding: 10px; border-radius: 5px; margin-top: 10px; }
+ .total-box { background: #fff8f0; padding: 10px; border-radius: 5px; margin-top: 10px; }
 </style>
 </head>
 <body>
@@ -51,6 +51,25 @@
     <h3>500g</h3><p class="price">Rs. 640</p><button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 500g', 640)">Add to Cart</button>
     <h3>1kg</h3><p class="price">Rs. 1280</p><button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 1kg', 1280)">Add to Cart</button>
     <h3>2kg</h3><p class="price">Rs. 2550</p><button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 2kg', 2550)">Add to Cart</button>
+  </div>
+
+  <!-- NEW PRODUCTS -->
+  <div class="product">
+    <img src="https://i.ibb.co/JWysYpFy/scarlet-beater.jpg" alt="Scarlet Beater">
+    <h2 style="color:#d2691e; font-size:18px;">Scarlet Beater 7 Speeds</h2>
+    <p class="price">Rs. 1499</p><button class="btn" onclick="addToCart('Scarlet Beater 7 Speeds', 1499)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="https://i.ibb.co/hRJHRMrp/arc-lighter.jpg" alt="Arc USB Lighter">
+    <h2 style="color:#d2691e; font-size:18px;">Arc USB Rechargeable Lighter</h2>
+    <p class="price">Rs. 350</p><button class="btn" onclick="addToCart('Arc USB Rechargeable Lighter', 350)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="https://i.ibb.co/PsCRmC5v/glass-jar.jpg" alt="Glass Jar Set">
+    <h2 style="color:#d2691e; font-size:18px;">3 Pcs Glass Jar Set</h2>
+    <p class="price">Rs. 2200</p><button class="btn" onclick="addToCart('3 Pcs Glass Jar Set', 2200)">Add to Cart</button>
   </div>
 
 </div>
