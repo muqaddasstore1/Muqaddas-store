@@ -91,13 +91,31 @@
     <h3>Dark Chocolate Bar</h3>
     <p>Premium Baking Chocolate</p>
     
-    <div class="price-options">
-        <button onclick="addToCart('Dark Chocolate Bar - 250g', 400)">250g - Rs. 400</button>
-        <button onclick="addToCart('Dark Chocolate Bar - 500g', 800)">500g - Rs. 800</button>
-        <button onclick="addToCart('Dark Chocolate Bar - 1kg', 1500)">1kg - Rs. 1500</button>
-        <button onclick="addToCart('Dark Chocolate Bar - 2kg', 2800)">2kg - Rs. 2800</button>
-    </div>
-  </div>
+    <div class="product-card">
+    <img src="https://i.ibb.co/7jK2Yq4D/dark-chocolate-bar.jpg" alt="Dark Chocolate Bar">
+    <h3>Dark Chocolate Bar</h3>
+    <p>Premium Baking Chocolate</p>
+
+    <label for="dark-choc-weight">Weight:</label>
+    <select id="dark-choc-weight">
+        <option value="250g-400">250g - Rs. 400</option>
+        <option value="500g-800">500g - Rs. 800</option>
+        <option value="1kg-1500">1kg - Rs. 1500</option>
+        <option value="2kg-2800">2kg - Rs. 2800</option>
+    </select>
+
+    <button class="add-to-cart" onclick="addDarkChoc()">Add to Cart</button>
+</div>
+
+<script>
+function addDarkChoc() {
+    let select = document.getElementById("dark-choc-weight");
+    let value = select.value.split("-");
+    let weight = value[0];
+    let price = value[1];
+    addToCart('Dark Chocolate Bar - ' + weight, price);
+}
+</script>
 
   <div class="product">
     <img src="https://i.ibb.co/67Kd5THj/milk-chocolate.jpg" alt="Milk Chocolate Bar">
