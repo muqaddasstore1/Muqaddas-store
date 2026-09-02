@@ -86,11 +86,17 @@
     <button class="btn" onclick="addToCart('Chocolate Chips', 100)">Add to Cart</button>
   </div>
 
-  <div class="product">
-    <img src="https://i.ibb.co/wh5qS4Fc/dark-chocolate.jpg" alt="Dark Chocolate Bar">
-    <h3 style="color:#d2691e; font-size:18px;">Chocolate Bar - Dark</h3>
-    <p style="font-size:12px; color:#666;">250g: Rs. 400 | 500g: Rs. 800 | 1kg: Rs. 1500 | 2kg: Rs. 2800</p>
-    <button class="btn" onclick="addToCart('Chocolate Bar Dark', 400)">Add to Cart</button>
+  <div class="product-card">
+    <img src="https://i.ibb.co/7jK2Yq4D/dark-chocolate-bar.jpg" alt="Dark Chocolate Bar">
+    <h3>Dark Chocolate Bar</h3>
+    <p>Premium Baking Chocolate</p>
+    
+    <div class="price-options">
+        <button onclick="addToCart('Dark Chocolate Bar - 250g', 400)">250g - Rs. 400</button>
+        <button onclick="addToCart('Dark Chocolate Bar - 500g', 800)">500g - Rs. 800</button>
+        <button onclick="addToCart('Dark Chocolate Bar - 1kg', 1500)">1kg - Rs. 1500</button>
+        <button onclick="addToCart('Dark Chocolate Bar - 2kg', 2800)">2kg - Rs. 2800</button>
+    </div>
   </div>
 
   <div class="product">
