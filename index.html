@@ -7,6 +7,7 @@
 <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #fff8f0; }
     h1 { text-align: center; color: #d2691e; }
+    h2 { grid-column: 1/-1; color: #d2691e; border-bottom: 2px solid #ffe4c4; padding-bottom: 8px; margin-top: 20px; }
 .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px; }
 .product { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
 .product img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
@@ -14,8 +15,9 @@
 .price { font-size: 18px; font-weight: bold; color: #d2691e; margin: 5px 0 10px 0; }
 .btn { background: #d2691e; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; width: 100%; margin-bottom: 8px; font-size: 14px; }
 .btn:hover { background: #b8561a; }
+.tag { background: red; color: white; font-size: 10px; padding: 2px 5px; border-radius: 3px; margin-left: 5px; }
 .cart { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-.cart h2 { color: #d2691e; }
+.cart h2 { color: #d2691e; border: none; margin-top: 0; }
     #cartItems div { padding: 8px 0; border-bottom: 1px solid #eee; }
     #whatsappBtn { background: #25D366; margin-top: 15px; }
     input, textarea, select { width: 100%; padding: 8px; margin: 5px 0 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
@@ -26,105 +28,102 @@
 
 <h1>🧀 Muqaddas Store</h1>
 
+<!-- NEW CATEGORY: BAKERY & INGREDIENTS -->
 <div class="products">
+<h2>Bakery & Ingredients</h2>
+
+  <div class="product">
+    <img src="https://ibb.co/DHpv9LpQ" alt="Oxford Butter">
+    <h3>Oxford Unsalted Butter 200g <span class="tag">Only for Karachi</span></h3>
+    <p class="price">Rs. 180</p><button class="btn" onclick="addToCart('Oxford Butter 200g', 180)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="https://ibb.co/jk5mxzk3" alt="Oxford Butter">
+    <h3>Oxford Unsalted Butter 200g</h3>
+    <p class="price">Rs. 180</p><button class="btn" onclick="addToCart('Oxford Butter 200g', 180)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="https://ibb.co/5XQC7zMk" alt="Harfa Brownie">
+    <h3>Harfa Instant Brownie Premix 200g</h3>
+    <p class="price">Rs. 220</p><button class="btn" onclick="addToCart('Harfa Brownie Premix', 220)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="https://ibb.co/v423vt1Q" alt="Harfa Fudge">
+    <h3>Harfa Chocolate Fudge Cake Mix 200g</h3>
+    <p class="price">Rs. 220</p><button class="btn" onclick="addToCart('Harfa Fudge Cake Mix', 220)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="https://ibb.co/1tHKFq1r" alt="Harfa Vanilla">
+    <h3>Harfa Vanilla Cake Premix 200g</h3>
+    <p class="price">Rs. 220</p><button class="btn" onclick="addToCart('Harfa Vanilla Premix', 220)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="https://ibb.co/ds1zYXCs" alt="Harfa Pizza">
+    <h3>Harfa Pizza Base Premix 200g</h3>
+    <p class="price">Rs. 220</p><button class="btn" onclick="addToCart('Harfa Pizza Premix', 220)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="https://ibb.co/PvmrsJKb" alt="Harfa Red Velvet">
+    <h3>Harfa Red Velvet Premix 200g</h3>
+    <p class="price">Rs. 220</p><button class="btn" onclick="addToCart('Harfa Red Velvet Premix', 220)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="https://ibb.co/WWD0rg01" alt="Harfa Donut">
+    <h3>Harfa Donut Premix 200g</h3>
+    <p class="price">Rs. 220</p><button class="btn" onclick="addToCart('Harfa Donut Premix', 220)">Add to Cart</button>
+  </div>
+<!-- Baki 20 Harfa Premix yahan add karne hain -->
+
+</div>
+
+<!-- OLD CATEGORY: CHEESE, KITCHEN & SPREADS -->
+<div class="products">
+<h2>Cheese, Kitchen & Spreads</h2>
 
   <div class="product">
     <img src="https://i.ibb.co/GQC1jR8R/cheese.jpg" alt="Nutritive Cheddar Cheese">
-    <h2 style="color:#d2691e; font-size:18px;">Nutritive Cheddar Cheese</h2>
-    <h3>250g</h3><p class="price">Rs. 270</p><button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 250g', 270)">Add to Cart</button>
-    <h3>500g</h3><p class="price">Rs. 540</p><button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 500g', 540)">Add to Cart</button>
-    <h3>1kg</h3><p class="price">Rs. 1080</p><button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 1kg', 1080)">Add to Cart</button>
-    <h3>2kg</h3><p class="price">Rs. 2150</p><button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 2kg', 2150)">Add to Cart</button>
+    <h3 style="color:#d2691e; font-size:18px;">Nutritive Cheddar Cheese</h3>
+    <h4>250g</h4><p class="price">Rs. 270</p><button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 250g', 270)">Add to Cart</button>
+    <h4>500g</h4><p class="price">Rs. 540</p><button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 500g', 540)">Add to Cart</button>
+    <h4>1kg</h4><p class="price">Rs. 1080</p><button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 1kg', 1080)">Add to Cart</button>
+    <h4>2kg</h4><p class="price">Rs. 2150</p><button class="btn" onclick="addToCart('Nutritive Cheddar Cheese - 2kg', 2150)">Add to Cart</button>
   </div>
 
   <div class="product">
     <img src="https://i.ibb.co/G4q9VtDK/slices.jpg" alt="Nutritive Cheese Slices">
-    <h2 style="color:#d2691e; font-size:18px;">Nutritive Cheese Slices</h2>
-    <h3>1kg Pack</h3><p class="price">Rs. 1450</p><button class="btn" onclick="addToCart('Nutritive Cheese Slices - 1kg', 1450)">Add to Cart</button>
-    <h3>Each Slice</h3><p class="price">Rs. 32</p><button class="btn" onclick="addToCart('Nutritive Cheese Slices - Each', 32)">Add to Cart</button>
+    <h3 style="color:#d2691e; font-size:18px;">Nutritive Cheese Slices</h3>
+    <h4>1kg Pack</h4><p class="price">Rs. 1450</p><button class="btn" onclick="addToCart('Nutritive Cheese Slices - 1kg', 1450)">Add to Cart</button>
+    <h4>Each Slice</h4><p class="price">Rs. 32</p><button class="btn" onclick="addToCart('Nutritive Cheese Slices - Each', 32)">Add to Cart</button>
   </div>
 
   <div class="product">
     <img src="https://i.ibb.co/LXgJw77X/mozzarella.jpg" alt="Nutritive Mozzarella Cheese">
-    <h2 style="color:#d2691e; font-size:18px;">Nutritive Mozzarella Cheese</h2>
-    <h3>250g</h3><p class="price">Rs. 320</p><button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 250g', 320)">Add to Cart</button>
-    <h3>500g</h3><p class="price">Rs. 640</p><button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 500g', 640)">Add to Cart</button>
-    <h3>1kg</h3><p class="price">Rs. 1280</p><button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 1kg', 1280)">Add to Cart</button>
-    <h3>2kg</h3><p class="price">Rs. 2550</p><button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 2kg', 2550)">Add to Cart</button>
+    <h3 style="color:#d2691e; font-size:18px;">Nutritive Mozzarella Cheese</h3>
+    <h4>250g</h4><p class="price">Rs. 320</p><button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 250g', 320)">Add to Cart</button>
+    <h4>500g</h4><p class="price">Rs. 640</p><button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 500g', 640)">Add to Cart</button>
+    <h4>1kg</h4><p class="price">Rs. 1280</p><button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 1kg', 1280)">Add to Cart</button>
+    <h4>2kg</h4><p class="price">Rs. 2550</p><button class="btn" onclick="addToCart('Nutritive Mozzarella Cheese - 2kg', 2550)">Add to Cart</button>
   </div>
 
-  <div class="product">
-    <img src="https://i.ibb.co/JWysYpFy/scarlet-beater.jpg" alt="Scarlet Beater">
-    <h2 style="color:#d2691e; font-size:18px;">Scarlet Beater 7 Speeds</h2>
-    <p class="price">Rs. 1499</p><button class="btn" onclick="addToCart('Scarlet Beater 7 Speeds', 1499)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="https://i.ibb.co/hRJHRMrp/arc-lighter.jpg" alt="Arc USB Lighter">
-    <h2 style="color:#d2691e; font-size:18px;">Arc USB Rechargeable Lighter</h2>
-    <p class="price">Rs. 350</p><button class="btn" onclick="addToCart('Arc USB Rechargeable Lighter', 350)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="https://i.ibb.co/PsCRmC5v/glass-jar.jpg" alt="Glass Jar Set">
-    <h2 style="color:#d2691e; font-size:18px;">3 Pcs Glass Jar Set</h2>
-    <p class="price">Rs. 2200</p><button class="btn" onclick="addToCart('3 Pcs Glass Jar Set', 2200)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="https://i.ibb.co/v42wtCCz/chocwavy-milk.jpg" alt="Chocwavy Milk Spread">
-    <h2 style="color:#d2691e; font-size:18px;">Chocwavy Chocolate Spread Milk</h2>
-    <h3>500g</h3><p class="price">Rs. 550</p><button class="btn" onclick="addToCart('Chocwavy Milk Spread - 500g', 550)">Add to Cart</button>
-    <h3>1kg</h3><p class="price">Rs. 1100</p><button class="btn" onclick="addToCart('Chocwavy Milk Spread - 1kg', 1100)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="https://i.ibb.co/chTMt24N/chocwavy-hazelnut.jpg" alt="Chocwavy Hazelnut Spread">
-    <h2 style="color:#d2691e; font-size:18px;">Chocwavy Chocolate Spread Hazelnut</h2>
-    <h3>500g</h3><p class="price">Rs. 650</p><button class="btn" onclick="addToCart('Chocwavy Hazelnut Spread - 500g', 650)">Add to Cart</button>
-    <h3>1kg</h3><p class="price">Rs. 1200</p><button class="btn" onclick="addToCart('Chocwavy Hazelnut Spread - 1kg', 1200)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="https://i.ibb.co/n8cgd97g/hot-chocolate.jpg" alt="Hot Chocolate Powder">
-    <h2 style="color:#d2691e; font-size:18px;">Harfa Foods Hot Chocolate Powder</h2>
-    <p class="price">Rs. 220</p><button class="btn" onclick="addToCart('Harfa Hot Chocolate Powder', 220)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="https://i.ibb.co/n8cgd97g/shortening.jpg" alt="Shortening">
-    <h2 style="color:#d2691e; font-size:18px;">Shortening</h2>
-    <h3>250g</h3><p class="price">Rs. 250</p><button class="btn" onclick="addToCart('Shortening - 250g', 250)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="https://i.ibb.co/351VHL4B/chocwavy-syrup.jpg" alt="Chocwavy Syrup">
-    <h2 style="color:#d2691e; font-size:18px;">Chocwavy Topping Syrup 250ml</h2>
-    <h3>Chocolate</h3><p class="price">Rs. 250</p><button class="btn" onclick="addToCart('Chocwavy Syrup Chocolate - 250ml', 250)">Add to Cart</button>
-    <h3>Strawberry</h3><p class="price">Rs. 250</p><button class="btn" onclick="addToCart('Chocwavy Syrup Strawberry - 250ml', 250)">Add to Cart</button>
-    <h3>Blueberry</h3><p class="price">Rs. 250</p><button class="btn" onclick="addToCart('Chocwavy Syrup Blueberry - 250ml', 250)">Add to Cart</button>
-    <h3>Caramel</h3><p class="price">Rs. 250</p><button class="btn" onclick="addToCart('Chocwavy Syrup Caramel - 250ml', 250)">Add to Cart</button>
-    <h3>Coffee</h3><p class="price">Rs. 250</p><button class="btn" onclick="addToCart('Chocwavy Syrup Coffee - 250ml', 250)">Add to Cart</button>
-  </div>
-
-  <!-- NEW 3 PRODUCTS -->
-  <div class="product">
-    <img src="https://i.ibb.co/k6h3hVJK/steel-lunchbox.jpg" alt="Steel Lunch Box">
-    <h2 style="color:#d2691e; font-size:18px;">2 Layers Inside Steel Body Lunch Box</h2>
-    <p class="price">Rs. 1599</p><button class="btn" onclick="addToCart('2 Layers Steel Lunch Box', 1599)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="https://i.ibb.co/NHprmLy/juicer-blender.jpg" alt="Juicer Blender">
-    <h2 style="color:#d2691e; font-size:18px;">6 Blades Rechargeable Juicer Blender</h2>
-    <p class="price">Rs. 900</p><button class="btn" onclick="addToCart('6 Blades Rechargeable Juicer Blender', 900)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="https://i.ibb.co/ycCNbYwM/raf-blender.jpg" alt="RAF Hand Blender">
-    <h2 style="color:#d2691e; font-size:18px;">RAF Hand Blender Set</h2>
-    <p class="price">Rs. 5500</p><button class="btn" onclick="addToCart('RAF Hand Blender Set', 5500)">Add to Cart</button>
-  </div>
+  <!-- Baqi sab purane products yahan wese hi rahenge -->
+  <div class="product"><img src="https://i.ibb.co/JWysYpFy/scarlet-beater.jpg"><h3 style="color:#d2691e; font-size:18px;">Scarlet Beater 7 Speeds</h3><p class="price">Rs. 1499</p><button class="btn" onclick="addToCart('Scarlet Beater 7 Speeds', 1499)">Add to Cart</button></div>
+  <div class="product"><img src="https://i.ibb.co/hRJHRMrp/arc-lighter.jpg"><h3 style="color:#d2691e; font-size:18px;">Arc USB Rechargeable Lighter</h3><p class="price">Rs. 350</p><button class="btn" onclick="addToCart('Arc USB Rechargeable Lighter', 350)">Add to Cart</button></div>
+  <div class="product"><img src="https://i.ibb.co/PsCRmC5v/glass-jar.jpg"><h3 style="color:#d2691e; font-size:18px;">3 Pcs Glass Jar Set</h3><p class="price">Rs. 2200</p><button class="btn" onclick="addToCart('3 Pcs Glass Jar Set', 2200)">Add to Cart</button></div>
+  <div class="product"><img src="https://i.ibb.co/v42wtCCz/chocwavy-milk.jpg"><h3 style="color:#d2691e; font-size:18px;">Chocwavy Chocolate Spread Milk</h3><h4>500g</h4><p class="price">Rs. 550</p><button class="btn" onclick="addToCart('Chocwavy Milk Spread - 500g', 550)">Add to Cart</button><h4>1kg</h4><p class="price">Rs. 1100</p><button class="btn" onclick="addToCart('Chocwavy Milk Spread - 1kg', 1100)">Add to Cart</button></div>
+  <div class="product"><img src="https://i.ibb.co/chTMt24N/chocwavy-hazelnut.jpg"><h3 style="color:#d2691e; font-size:18px;">Chocwavy Chocolate Spread Hazelnut</h3><h4>500g</h4><p class="price">Rs. 650</p><button class="btn" onclick="addToCart('Chocwavy Hazelnut Spread - 500g', 650)">Add to Cart</button><h4>1kg</h4><p class="price">Rs. 1200</p><button class="btn" onclick="addToCart('Chocwavy Hazelnut Spread - 1kg', 1200)">Add to Cart</button></div>
+  <div class="product"><img src="https://i.ibb.co/n8cgd97g/hot-chocolate.jpg"><h3 style="color:#d2691e; font-size:18px;">Harfa Foods Hot Chocolate Powder</h3><p class="price">Rs. 220</p><button class="btn" onclick="addToCart('Harfa Hot Chocolate Powder', 220)">Add to Cart</button></div>
+  <div class="product"><img src="https://i.ibb.co/n8cgd97g/shortening.jpg"><h3 style="color:#d2691e; font-size:18px;">Shortening</h3><h4>250g</h4><p class="price">Rs. 250</p><button class="btn" onclick="addToCart('Shortening - 250g', 250)">Add to Cart</button></div>
+  <div class="product"><img src="https://i.ibb.co/351VHL4B/chocwavy-syrup.jpg"><h3 style="color:#d2691e; font-size:18px;">Chocwavy Topping Syrup 250ml</h3><h4>Chocolate</h4><p class="price">Rs. 250</p><button class="btn" onclick="addToCart('Chocwavy Syrup Chocolate - 250ml', 250)">Add to Cart</button><h4>Strawberry</h4><p class="price">Rs. 250</p><button class="btn" onclick="addToCart('Chocwavy Syrup Strawberry - 250ml', 250)">Add to Cart</button><h4>Blueberry</h4><p class="price">Rs. 250</p><button class="btn" onclick="addToCart('Chocwavy Syrup Blueberry - 250ml', 250)">Add to Cart</button><h4>Caramel</h4><p class="price">Rs. 250</p><button class="btn" onclick="addToCart('Chocwavy Syrup Caramel - 250ml', 250)">Add to Cart</button><h4>Coffee</h4><p class="price">Rs. 250</p><button class="btn" onclick="addToCart('Chocwavy Syrup Coffee - 250ml', 250)">Add to Cart</button></div>
+  <div class="product"><img src="https://i.ibb.co/k6h3hVJK/steel-lunchbox.jpg"><h3 style="color:#d2691e; font-size:18px;">2 Layers Inside Steel Body Lunch Box</h3><p class="price">Rs. 1599</p><button class="btn" onclick="addToCart('2 Layers Steel Lunch Box', 1599)">Add to Cart</button></div>
+  <div class="product"><img src="https://i.ibb.co/NHprmLy/juicer-blender.jpg"><h3 style="color:#d2691e; font-size:18px;">6 Blades Rechargeable Juicer Blender</h3><p class="price">Rs. 900</p><button class="btn" onclick="addToCart('6 Blades Rechargeable Juicer Blender', 900)">Add to Cart</button></div>
+  <div class="product"><img src="https://i.ibb.co/ycCNbYwM/raf-blender.jpg"><h3 style="color:#d2691e; font-size:18px;">RAF Hand Blender Set</h3><p class="price">Rs. 5500</p><button class="btn" onclick="addToCart('RAF Hand Blender Set', 5500)">Add to Cart</button></div>
 
 </div>
 
@@ -216,4 +215,4 @@ function sendWhatsApp() {
 </script>
 
 </body>
-</html>
+      </html>
